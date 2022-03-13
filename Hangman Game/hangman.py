@@ -1,14 +1,3 @@
-"""
-Created on Wed Mar  9 19:56:39 2022
-
-@author: shazzad Hasan
-"""
-# Hangman game
-#
-
-# -----------------------------------
-# Helper code
-
 import random
 import string
 
@@ -39,8 +28,6 @@ def chooseWord(wordlist):
     """
     return random.choice(wordlist)
 
-# end of helper code
-# -----------------------------------
 
 # Load the list of words into the variable wordlist
 # so that it can be accessed from anywhere in the program
@@ -53,7 +40,6 @@ def isWordGuessed(secretWord, lettersGuessed):
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
     '''
-
     secret = set(secretWord)
     guessed = set(lettersGuessed)
     common = secret.intersection(guessed)
@@ -69,7 +55,6 @@ def getGuessedWord(secretWord, lettersGuessed):
     returns: string, comprised of letters and underscores that represents
       what letters in secretWord have been guessed so far.
     '''
-    
     result = ''
     for ch in secretWord:
         if ch in lettersGuessed:
@@ -85,7 +70,6 @@ def getAvailableLetters(lettersGuessed):
     returns: string, comprised of letters that represents what letters have not
       yet been guessed.
     '''
-    
     letters = set(string.ascii_lowercase)
     guessed = set(lettersGuessed)
     remaining = sorted(letters - guessed)
@@ -160,5 +144,3 @@ def hangman(secretWord):
 
 secretWord = chooseWord(wordlist).lower()
 hangman(secretWord)
-
-
