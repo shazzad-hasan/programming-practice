@@ -22,7 +22,7 @@ def player_turn(board, player):
     board[random_location] = player
     return board
 
-# check horizontal rows winner
+# check horizontal winner
 def horizontal_win(board, player):
     rows = len(board)
     columns = rows
@@ -36,7 +36,7 @@ def horizontal_win(board, player):
             break 
     return win
 
-# check vertical rows winner
+# check vertical winner
 def vertical_win(board, player):
     rows = len(board)
     columns = rows
@@ -50,7 +50,7 @@ def vertical_win(board, player):
             break 
     return win
 
-# check diagonal rows winner
+# check diagonal winner
 def diagonal_win(board, player):
     board_length = len(board)
     
