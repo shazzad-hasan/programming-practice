@@ -15,7 +15,8 @@ def monte_carlo(n_samples, radius=1):
     """ Return the estimate of pi using the monte carlo method. """
     in_circle_count = 0
     for i in range(n_samples):
-        # sample x and y from the uniform distribution
+
+        # generate points in the first quadrant
         x = random.uniform(0, radius)
         y = random.uniform(0, radius)
 
